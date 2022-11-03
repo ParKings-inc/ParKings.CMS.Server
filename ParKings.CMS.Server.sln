@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33006.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParKings.CMS.Server", "ParKings.CMS.Server\ParKings.CMS.Server.csproj", "{5300B5C4-5F30-4EA9-9220-C5159B126C6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5300B5C4-5F30-4EA9-9220-C5159B126C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5300B5C4-5F30-4EA9-9220-C5159B126C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5300B5C4-5F30-4EA9-9220-C5159B126C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5300B5C4-5F30-4EA9-9220-C5159B126C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BD8DB57-8F00-43B5-9F18-A1F02BE547C3}
+	EndGlobalSection
+EndGlobal
