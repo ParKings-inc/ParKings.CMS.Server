@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Apis.Auth" Version="1.57.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ParKings.CMS.Core\ParKings.CMS.Core.csproj" />
+    <ProjectReference Include="..\ParKings.CMS.Server.Core\ParKings.CMS.Server.Core.csproj" />
   </ItemGroup>
 
 </Project>

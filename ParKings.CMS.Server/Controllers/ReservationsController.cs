@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ParKings.CMS.Core.Reservations;
+using ParKings.CMS.Server.Core.Reservations;
 
 namespace ParKings.CMS.Server.Controllers;
 

@@ -1,3 +1,5 @@
+using ParKings.CMS.Server.Middleware;
+
 const string ParkingOrigins = "_ParkingOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,15 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 
-builder.Services.AddCors(options => {
-    options.AddPolicy(ParkingOrigins, builder => {
-        builder.WithOrigins("http://localhost:3000");
-    });
-});
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors();
+
+builder.Services.AddTransient<GoogleAuthenticationMiddleware>();
 
 var app = builder.Build();
 
@@ -22,6 +23,14 @@ if (app.Environment.IsDevelopment()) {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(x => x.WithOrigins("http://localhost:3000")
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials()
+);
+
+app.UseGoogleAuthenticationMiddleware();
 
 app.UseHttpsRedirection();
 

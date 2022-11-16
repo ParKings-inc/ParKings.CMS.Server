@@ -1,4 +1,4 @@
-﻿namespace ParKings.CMS.Core.Reservations;
+﻿namespace ParKings.CMS.Server.Core.Reservations;
 
 public class Reservation {
     public DateTime ArrivalTime { get; }
