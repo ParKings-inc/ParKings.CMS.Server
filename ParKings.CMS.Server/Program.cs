@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddDbContext<ParKingsContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL_ParKingsDB")));
+builder.Services.AddDbContext<ParKingsContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL_ParKingsDB")));
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors();
