@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using ParKings.CMS.Server.Databases;
 using ParKings.CMS.Server.Middleware;
 
 const string ParkingOrigins = "_ParkingOrigins";
@@ -10,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddDbContext<ParKingsContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL_ParKingsDB")));
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors();
