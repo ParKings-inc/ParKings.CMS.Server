@@ -14,8 +14,14 @@ public class ReservationsController : Controller {
         Context = context;
     }
 
-    [HttpGet(Name = "GetReservations")]
+    [HttpGet("GetReservations")]
     public async Task<IEnumerable<ReservationEntry>> Get() {
         return await Context.Reservations.ToListAsync();
+    }
+
+    [HttpPut("UpdateStatus/{id}/{status}")]
+    public async Task UpdateReservationStatus(int id, string status) {
+        await Context.Reservations.Where(i => i.Id == id).ForEachAsync(i => i.Status = status);
+        await Context.SaveChangesAsync();
     }
 }
