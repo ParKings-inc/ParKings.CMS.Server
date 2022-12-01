@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ParKings.CMS.Server.Core.Reservations;
 using ParKings.CMS.Server.Databases;
 using ParKings.CMS.Server.Databases.Tables;
 
@@ -20,7 +21,7 @@ public class ReservationsController : Controller {
     }
 
     [HttpPut("UpdateStatus/{id}/{status}")]
-    public async Task UpdateReservationStatus(int id, string status) {
+    public async Task UpdateReservationStatus(int id, ReservationStatus status) {
         await Context.Reservations.Where(i => i.Id == id).ForEachAsync(i => i.Status = status);
         await Context.SaveChangesAsync();
     }
