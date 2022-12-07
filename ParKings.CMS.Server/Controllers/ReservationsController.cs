@@ -21,7 +21,7 @@ public class ReservationsController : Controller {
     }
 
     [HttpPut("UpdateStatus/{id}/{status}")]
-    public async Task UpdateReservationStatus(int id, ReservationStatus status) {
+    public async Task UpdateReservationStatus(int id, string status) {
         await Context.Reservations.Where(i => i.Id == id).ForEachAsync(i => i.Status = status);
         await Context.SaveChangesAsync();
     }

@@ -3,5 +3,5 @@
 public class Reservation {
     public DateTime ArrivalTime { get; set; }
     public DateTime DepartureTime { get; set; }
-    public ReservationStatus Status { get; set; }
+    public string Status { get; set; }
 }
