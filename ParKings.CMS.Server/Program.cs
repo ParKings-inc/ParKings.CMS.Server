@@ -17,7 +17,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors();
 
-builder.Services.AddTransient<GoogleAuthenticationMiddleware>();
+//builder.Services.AddTransient<GoogleAuthenticationMiddleware>();
 
 var app = builder.Build();
 
@@ -33,7 +33,7 @@ app.UseCors(x => x.WithOrigins("http://localhost:3000","http://localhost:3001")
     .AllowCredentials()
 );
 
-app.UseGoogleAuthenticationMiddleware();
+//app.UseGoogleAuthenticationMiddleware();
 
 app.UseHttpsRedirection();
 
